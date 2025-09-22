@@ -65,7 +65,12 @@
       opacity:0;
       transform:translateY(50px);
     }
-    .image-container img{width:100%; height:530px; display:block;}
+    .image-container img{
+      width:100%;
+      height:auto;          /* responsive fix */
+      display:block;
+      object-fit:cover;
+    }
     .text-overlay{
       position:absolute;
       top:15%;
@@ -118,6 +123,7 @@
     <a href="visit.html">Visit Us</a>
   </div>
 
+  <!-- First Image -->
   <div class="image-container">
     <img src="mother.jpg" alt="mother mary">
   </div>
@@ -131,7 +137,7 @@
     <p>സെന്റ് മേരീസ് അസംപ്ഷൻ ഫോറോനാ പള്ളി, കൊട്ടേക്കാട്-യിലെ ഒക്ടോബർ തിരുനാൾ ഒരു സാധാരണ ആഘോഷം മാത്രമല്ല; അത് വിശ്വാസത്തിന്റെയും, സമ്പ്രദായത്തിന്റെയും, സാംസ്കാരിക ഐക്യത്തിന്റെയും മഹോത്സവമാണ്. മാതാവിന്റെ കരുതലിൽ parish മുഴുവനും ഒന്നിക്കുന്നു, കുടുംബങ്ങൾ തമ്മിൽ സൗഹൃദവും ഐക്യവും വളരുന്നു. കൊട്ടേക്കാടിനെയും പരിസര പ്രദേശങ്ങളെയും അഭിമാനത്തോടെ ബന്ധിപ്പിക്കുന്ന ഈ തിരുനാൾ, ആത്മീയ നവീകരണത്തിന്റെയും, സാമൂഹിക ഐക്യത്തിന്റെയും, സാംസ്കാരിക അഭിമാനത്തിന്റെയും പ്രതീകം ആയി, വർഷംതോറും കൂടുതൽ ഭംഗിയോടെ പ്രകാശിക്കുന്നു.</p>
   </div>
 
-  <!-- Image Section -->
+  <!-- Image Section with Overlay -->
   <div class="image-container">
     <img src="elephent.png" alt="Elephants">
     <div class="text-overlay">
@@ -167,8 +173,8 @@
     window.addEventListener('load', () => {
       gsap.to(".navbar",{duration:1,opacity:1,y:0,ease:"power2.out"});
       gsap.to(".white-bottom",{duration:1,opacity:1,y:0,ease:"power2.out",delay:0.3});
-      gsap.to(".image-container",{duration:1,opacity:1,y:0,ease:"power2.out",delay:0.6});
-      gsap.to(".footer",{duration:1,opacity:1,y:0,ease:"power2.out",delay:0.9});
+      gsap.to(".image-container",{duration:1,opacity:1,y:0,ease:"power2.out",delay:0.6,stagger:0.2});
+      gsap.to(".footer",{duration:1,opacity:1,y:0,ease:"power2.out",delay:1});
     });
   </script>
 
